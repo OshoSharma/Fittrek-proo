@@ -64,7 +64,7 @@ nav a:hover {
   height: 100vh;
   align-items: center;
   justify-content: space-between;
-  background-image: url("hero.jpg");
+  background-image: url("./images/hero.jpg");
 
 }
 
