@@ -2,13 +2,36 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <link rel="stylesheet" href="SYT.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Start Your Transformation | FitTrack Pro</title>
 
+  <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- CSS Files -->
+  <link rel="stylesheet" href="SYT.css">
   <link rel="stylesheet" href="register.css">
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+
+    /* success message */
+    .success-msg {
+      display: none;
+      margin-top: 20px;
+      padding: 12px;
+      background: #e6fffa;
+      color: #065f46;
+      border-radius: 6px;
+      text-align: center;
+      font-weight: 600;
+    }
+  </style>
 </head>
+
 <body>
 
   <!-- NAVBAR -->
@@ -27,7 +50,8 @@
         Create your FitTrack account and unlock AI-powered fitness insights.
       </p>
 
-      <form class="register-form">
+      <!-- FORM -->
+      <form class="register-form" id="registerForm">
 
         <div class="input-group">
           <label>Full Name</label>
@@ -59,6 +83,11 @@
           Create My Account
         </button>
 
+        <!-- SUCCESS MESSAGE -->
+        <div class="success-msg" id="successMsg">
+          ✅ Registration Successful! Redirecting to Home...
+        </div>
+
         <p class="login-text">
           Already have an account?
           <a href="#">Log in</a>
@@ -69,6 +98,26 @@
     </div>
 
   </section>
+
+  <!-- JAVASCRIPT -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const form = document.getElementById("registerForm");
+      const successMsg = document.getElementById("successMsg");
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault(); // stop page reload
+
+        // show message
+        successMsg.style.display = "block";
+
+        // redirect after 2 seconds
+        setTimeout(function () {
+          window.location.href = "index.html";
+        }, 2000);
+      });
+    });
+  </script>
 
 </body>
 </html>
