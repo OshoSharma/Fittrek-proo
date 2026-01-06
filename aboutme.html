@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us | FitTrack Pro</title>
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #f4fbff, #e6f2ff);
+      overflow-x: hidden;
+    }
+
+    /* NAVBAR */
+    header {
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 26px;
+      font-weight: 800;
+      color: #007aff;
+    }
+
+    .logo span {
+      color: #111;
+    }
+
+    header a {
+      text-decoration: none;
+      font-weight: 600;
+      color: #333;
+    }
+
+    /* SECTION WRAPPER */
+    .about-section {
+      min-height: calc(100vh - 80px);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 60px 20px;
+    }
+
+    /* CARD */
+    .about-card {
+      background: #ffffff;
+      max-width: 480px;
+      width: 100%;
+      padding: 50px 45px;
+      border-radius: 22px;
+      box-shadow: 0 30px 70px rgba(0, 122, 255, 0.18);
+      text-align: center;
+
+      /* scroll animation initial */
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.9s ease;
+    }
+
+    /* ACTIVE STATE (on scroll) */
+    .about-card.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .about-card h1 {
+      font-size: 30px;
+      font-weight: 800;
+      margin-bottom: 8px;
+      color: #0a2a4a;
+    }
+
+    .subtitle {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 30px;
+    }
+
+    .about-text {
+      font-size: 16px;
+      line-height: 1.7;
+      color: #333;
+      margin-bottom: 18px;
+    }
+
+    .highlight {
+      color: #007aff;
+      font-weight: 700;
+    }
+
+    /* VISION BOX */
+    .vision-box {
+      margin-top: 30px;
+      padding: 24px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, #007aff, #005fcc);
+      color: #fff;
+    }
+
+    .vision-box h3 {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .vision-box p {
+      font-size: 15px;
+      line-height: 1.6;
+      opacity: 0.95;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      font-size: 13px;
+      color: #666;
+      padding: 18px 0;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 500px) {
+      .about-card {
+        padding: 40px 28px;
+      }
+
+      .about-card h1 {
+        font-size: 26px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <header>
+    <div class="logo">FitTrack<span>Pro</span></div>
+    <a href="homepage.html">← Back to Home</a>
+  </header>
+
+  <!-- ABOUT SECTION -->
+  <section class="about-section">
+    <div class="about-card" id="aboutCard">
+
+      <h1>About FitTrack Pro</h1>
+      <p class="subtitle">Smart Fitness & Wellness Platform</p>
+
+      <p class="about-text">
+        <span class="highlight">FitTrack Pro</span> helps you understand your body
+        using data-driven insights, clean visuals, and intelligent technology.
+      </p>
+
+      <p class="about-text">
+        We transform raw health data into meaningful guidance so you can make
+        better decisions about fitness, nutrition, and daily habits.
+      </p>
+
+      <div class="vision-box">
+        <h3>Our Vision</h3>
+        <p>
+          To make every generation healthier than the last by combining
+          technology, science, and a human-first approach to wellness.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2026 FitTrack Pro · Built for a healthier future
+  </footer>
+
+  <!-- SCROLL ANIMATION SCRIPT -->
+  <script>
+    const card = document.getElementById('aboutCard');
+
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            card.classList.add('show');
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    observer.observe(card);
+  </script>
+
+</body>
+</html>

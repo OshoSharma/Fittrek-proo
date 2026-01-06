@@ -94,7 +94,7 @@ nav a:hover {
 }
 
 /* CTA BUTTON */
-.cta-btn {
+/* .cta-btn {
   background: var(--green);
   border: none;
   padding: 16px 30px;
@@ -109,7 +109,7 @@ nav a:hover {
 .cta-btn:hover {
   background: #0077B3;
   transform: scale(1.08);
-}
+} */
 
 /* RATINGS */
 .ratings {
